@@ -1,0 +1,26 @@
+/*
+Crie uma função recursiva que receba dois números inteiros positivos k e n e calcule kn
+*/
+#include <stdio.h>
+int potencia(int k, int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return ( k * potencia(k, n - 1)); 
+}
+int main() {
+    int k, n;
+
+    printf("Digite um numero inteiro positivo k: ");
+    scanf("%d", &k);
+    printf("Digite um numero inteiro positivo n: ");
+    scanf("%d", &n);
+
+    if (k < 0 || n < 0) {
+        printf("Por favor, digite numeros inteiros positivos.\n");
+    } else {
+        printf("%d elevado a %d e: %d\n", k, n, potencia(k, n));
+    }
+
+    return 0;
+}
