@@ -1,0 +1,25 @@
+/*
+Escreva um programa que contenha uma função que calcule a soma dos primeiros N cubos: �(�) = 1! +
+2! + ⋯ + �!
+*/
+#include <stdio.h>
+int somacubo(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return (n * n * n) + somacubo(n - 1); 
+}
+int main() {
+    int n;
+
+    printf("Digite um numero positivo inteiro: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Por favor, digite um numero positivo.\n");
+    } else {
+        printf("A soma dos primeiros %d cubo e: %d\n", n, somacubo(n));
+    }
+
+    return 0;
+}
